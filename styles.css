@@ -2,7 +2,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f7f6;
-  color: #4d0f00;
+  color: #333;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -23,7 +23,7 @@ body {
 
 .hero .tagline {
   font-size: 18px;
-  color: #f4f7f6;;
+  color: #f4f7f6;
   margin-bottom: 20px;
 }
 
@@ -47,7 +47,7 @@ body {
 /* SECTION HEADINGS */
 h2 {
   background-color: gold;
-  color: #4d0f00;
+  color: #000000;
   text-align: center;
   font-size: 26px;
   padding: 10px;
@@ -55,7 +55,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* LISTS (Remove Bullets & Align Center) */
+/* LISTS & PARAGRAPHS */
 ul {
   background-color: lightgreen;
   padding: 15px;
@@ -76,65 +76,35 @@ p {
   margin: 0;
 }
 
-/* SERVICES SECTION (FLEXBOX CARDS) */
-.services-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-.card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  min-width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card h3 {
-  color: #1a202c;
-  margin-top: 0;
-}
-
-.card p {
-  background-color: transparent;
-  padding: 0;
-  font-size: 16px;
-  color: #555;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-}
-
-/* PROJECTS SECTION (FLEXBOX CARDS) */
+/* SERVICES & PROJECTS CONTAINERS */
+.services-container,
 .projects-container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 20px;
 }
 
-.project-card {
+/* CARDS STYLING (SERVICES & PROJECTS) */
+.card, .project-card {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   flex: 1;
   min-width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  /* Smooth animation transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.project-card h3 {
+.card h3, .project-card h3 {
   color: #1a202c;
   margin-top: 0;
 }
 
-.project-card p {
+.card p, .project-card p {
   background-color: transparent;
   padding: 0;
   font-size: 15px;
@@ -142,24 +112,28 @@ p {
   margin-bottom: 15px;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+/* JAB CURSOR CARD PAR JAYE (HOVER EFFECT & MOVE) */
+.card:hover, .project-card:hover {
+  background-color: #e6f7ff; /* Color change ho kar light blue tint banega */
+  transform: translateY(-8px); /* Card 8px oopar uthega */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Soft dynamic shadow */
 }
 
-.btn-project {
+/* BUTTONS STYLING */
+.btn {
   display: inline-block;
-  margin-top: 15px; /* Text se thoda fasla banayega */
-  margin-bottom: 10px;
   background-color: #2b6cb0;
   color: #ffffff;
   padding: 8px 16px;
   text-decoration: none;
   border-radius: 5px;
   font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.btn-project:hover {
+.btn:hover {
   background-color: #1a4971;
 }
 
@@ -196,10 +170,6 @@ p {
 @media (max-width: 768px) {
   .services-container,
   .projects-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
     flex-direction: column;
   }
   
